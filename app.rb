@@ -23,6 +23,8 @@ configure do
 end
 
 get '/' do
+    
+    @results = @db.execute 'select * from Posts order by id desc'
 	erb :index			
 end
 
